@@ -1,0 +1,8 @@
+Balance1,Balance2,Diff,Status,Anamoly
+20,30,-10,break,No
+40,40,0,pass,No
+500,30,470,break,(>300)Yes
+5,4.5,0.5,pass,No
+4,4.5,-0.5,pass,No
+
+
