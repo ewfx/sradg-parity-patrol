@@ -24,8 +24,3 @@ python -m uvicorn main:app --reload
 swagger - /docs
 
 ---------------------------
-To run post request from code -
-Open fresh terminal 
-run below commands,
-pip install requests
-python .\sample_req.py
