@@ -1,0 +1,17 @@
+Account;Balance1,Balance2,Status,Anamoly,comment
+100,20,60,break,No,difference is consistent
+100,20,50,break,No,difference is consistent
+100,20,40,break,No,difference is within threashold
+100,20,30,break,No,difference is within threashold
+101,20,200,break,Yes,Sudden big difference
+101,20,50,break,No,difference is consistent
+101,20,40,break,No,difference is within threashold
+101,20,30,break,No,difference is within threashold
+101,20,20,No break,No,Matching
+102,500,600,break,Yes,Sudden big difference
+102,500,505,No break,No,Matching difference is negligible
+102,500,501,No break,No,Matching difference is negligible
+102,500,500,No break,No,Matching
+
+
+
