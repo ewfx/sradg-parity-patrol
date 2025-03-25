@@ -3,8 +3,8 @@ import csv
 import google.generativeai as gen
 import json
 
-gen.configure(api_key="")
-client = genai.Client(api_key="")
+gen.configure(api_key="AIzaSyDCkb9IUsp9NSQBhWXMAmkJLDbYtwZV23Y")
+client = genai.Client(api_key="AIzaSyDCkb9IUsp9NSQBhWXMAmkJLDbYtwZV23Y")
 
 def generate_output2(input):
     response = client.models.generate_content(
@@ -40,6 +40,30 @@ def research_csv(input):
  ])
 
   prompt = "Could you generate csv with updated status of this data based on history provided, for Reconciliation? hide history data"
+
+  data = {
+    "prompt": prompt,
+    "data": getcsv_response(input)
+  }
+
+  chat = convo.send_message(json.dumps(data))
+  return chat.text
+
+
+
+def reconcile_csv_usecase1(input):
+  model = gen.GenerativeModel(model_name="gemini-2.0-flash")
+  config = {
+        'response_mime_type' : 'application/json'
+       }
+  convo = model.start_chat(history=[
+    {
+      "role":"user",
+      "parts": getcsv_response("history_data.csv")
+    }
+ ])
+
+  prompt = "Could you generate csv with updated status of this data based on history provided, for Reconciliation? also add the comment based on history data? hide history data"
 
   data = {
     "prompt": prompt,

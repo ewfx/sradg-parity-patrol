@@ -3,6 +3,7 @@ from fastapi import UploadFile
 from pydantic import BaseModel
 from geminiUtil import generate_output2
 from geminiUtil import research_csv
+from geminiUtil import reconcile_csv_usecase1
 import json
 import csv
 
@@ -35,5 +36,11 @@ async def movieCast_endpoint(movie : Movie):
 @app.post("/csvRecon")
 async def csv_recon_endpoint(file : UploadFile):
     output = research_csv(file.filename)
+    print(output)
+    return {"Summary": output}
+
+@app.post("/csvRecon/usecase1")
+async def usecase1_csv_recon_endpoint(file : UploadFile):
+    output = reconcile_csv_usecase1(file.filename)
     print(output)
     return {"Summary": output}
