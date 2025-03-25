@@ -3,8 +3,8 @@ import csv
 import google.generativeai as gen
 import json
 
-gen.configure(api_key="AIzaSyDCkb9IUsp9NSQBhWXMAmkJLDbYtwZV23Y")
-client = genai.Client(api_key="AIzaSyDCkb9IUsp9NSQBhWXMAmkJLDbYtwZV23Y")
+gen.configure(api_key="")
+client = genai.Client(api_key="")
 
 def generate_output2(input):
     response = client.models.generate_content(
