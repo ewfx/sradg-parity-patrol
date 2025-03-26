@@ -5,7 +5,6 @@ Open cmd - python3 <Enter> -> download from store
 Import project into vs code.
 
 Open terminal
-python -m venv example
 
 cd .\requirement\  
 pip install -r .\req.txt
@@ -22,5 +21,9 @@ Paste it in api_key = ""
 
 python -m uvicorn main:app --reload
 swagger - /docs
+
+Below 2 endpoints to be used. Sample csv - csv_user.csv, usecase1_test.csv attached could be used to post below apis.
+/csvRecon - 
+/csvRecon/usecase1 -
 
 ---------------------------

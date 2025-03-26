@@ -13,9 +13,6 @@ class Data(BaseModel):
     name: str
     quant: int
 
-class Movie(BaseModel):
-    movieName: str
-
 @app.get("/ok")
 async def ok_endpoint():
     return {"message":"ok"}

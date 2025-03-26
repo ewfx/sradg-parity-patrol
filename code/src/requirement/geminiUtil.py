@@ -63,7 +63,7 @@ def reconcile_csv_usecase1(input):
     }
  ])
 
-  prompt = "Could you generate csv with updated status of this data based on history provided, for Reconciliation? also add the comment based on history data? hide history data"
+  prompt = "Could you generate csv with updated status of this data based on history provided, for Reconciliation? hide history data"
 
   data = {
     "prompt": prompt,
