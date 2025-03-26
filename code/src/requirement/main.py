@@ -41,3 +41,26 @@ async def usecase1_csv_recon_endpoint(file : UploadFile):
     output = reconcile_csv_usecase1(file.filename)
     print(output)
     return {"Summary": output}
+
+@app.post("/csvRecon/usecase2")
+async def usecase2_csv_recon_endpoint(file: UploadFile):
+    # Process the uploaded file
+    output = reconcile_csv_usecase1(file.filename)
+    print(output)
+
+    # Clean the output to remove unwanted markers like "```csv" and "```"
+    if isinstance(output, str):
+        output = output.replace("```csv", "").replace("```", "").strip()
+
+    # Write the cleaned output to a CSV file
+    output_csv_path = "usecase2_output.csv"
+    with open(output_csv_path, mode="w", newline="") as csv_file:
+        writer = csv.writer(csv_file)
+
+        # Split the cleaned output into rows and write each row
+        for line in output.splitlines():
+            # Split each line by commas to create individual fields
+            row = line.split(",")
+            writer.writerow(row)
+
+    return {"Summary": "CSV created successfully", "Output CSV": output_csv_path}
